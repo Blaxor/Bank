@@ -2,5 +2,10 @@ name: Bank
 version: ${project.version}
 main: ro.deiutzblaxo.bank.Main
 api-version: 1.16
+softdepend:
+  - Vault
+  - PlaceholderAPI
 commands:
   bank:
+    permission: bank.bank
+  test:

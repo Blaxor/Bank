@@ -14,6 +14,7 @@ import ro.nexs.db.manager.exception.NoDataFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
 
 
 public class PlayerBank {
@@ -83,12 +84,14 @@ public class PlayerBank {
             case DEPOSIT:
 
                 this.deposited += amount;
+                Main.getInstance().getLogger().log(Level.INFO,player.getName() +" deposited " + amount + " and now have "+this.deposited + " in bank");
                 transactions.add(new Transaction(this,type,amount,System.currentTimeMillis()));
                 save();
                 break;
 
             case WITHDRAW:
                this.deposited -= amount;
+                Main.getInstance().getLogger().log(Level.INFO,player.getName() +" withdraw " + amount + " and now have "+this.deposited + " in bank");
                transactions.add(new Transaction(this,type,amount,System.currentTimeMillis()));
                save();
                break;

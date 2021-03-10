@@ -2,21 +2,20 @@ package ro.deiutzblaxo.bank;
 
 
 import net.milkbowl.vault.economy.Economy;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import ro.deiutzblaxo.bank.command.Command;
 import ro.deiutzblaxo.bank.config.MessagesManager;
 import ro.deiutzblaxo.bank.config.ymlDataBase;
-import ro.deiutzblaxo.bank.gui.BankerMenu;
 import ro.deiutzblaxo.bank.gui.InventoryEvent;
 import ro.deiutzblaxo.bank.player.PlayerDeath;
 import ro.deiutzblaxo.bank.player.PlayerManager;
 import ro.deiutzblaxo.bank.listener.ChatInsertNumber;
+import ro.deiutzblaxo.bank.utils.DBManager;
 import ro.nexs.db.manager.connection.DBConnection;
-import ro.nexs.db.manager.manager.DBManager;
+
+import java.util.logging.Level;
 
 public final class Main extends JavaPlugin {
 
@@ -68,6 +67,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerDeath(),this);
         getCommand("bank").setExecutor(new Command());
         getCommand("bank").setPermission("bank.command");
+
 
     }
 
