@@ -1,0 +1,8 @@
+#if you are using SQL database set this to true if is on false it will generate yml and store there.
+database-enabled: false
+#database config
+host: localhost
+port: 3306
+username: abc
+password: password
+database: OneBlock
